@@ -133,7 +133,6 @@ squareThree.addEventListener('click', ()=>{
     menuItemsTitleThree.style.display = "none"
     squareThree.classList.add("active-menu")
     folderThree.classList.add("active-menu")
-    CV.style.zIndex = "50"
 
     setTimeout(()=>{
       gridContainer.style.transform = "scale(0.25)"
@@ -233,6 +232,7 @@ backButton.addEventListener("click", ()=>{
     squareFive.style.zIndex = ""
   }, 400)
 })
+
 
 
 
