@@ -1,0 +1,610 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background-color: #32213A;
+}
+
+.blur-bg {
+  background: radial-gradient(#3A2344, #432A4E);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  z-index: -1;
+}
+
+.top {
+  position: relative;
+  margin: 0 auto;
+  width: 1440px;
+  height: 20vh;
+  top: 0px;
+  left: 0px;
+  color: #001432;
+  font-family: "Open Sans Condensed", sans-serif;
+  background-color: #8d80ad;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.top::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: difference;
+  z-index: 50;
+  background-color: whitesmoke;
+}
+
+.top h1 {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 7.5rem;
+  position: absolute;
+  letter-spacing: 2px;
+  font-variant: small-caps;
+  font-weight: bolder;
+  left: -22.5px;
+  margin: 0;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  top: 50%;
+}
+
+.skills-front, .skills-back-tools {
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.58s ease-out;
+  transition: -webkit-transform 0.58s ease-out;
+  transition: transform 0.58s ease-out;
+  transition: transform 0.58s ease-out, -webkit-transform 0.58s ease-out;
+  z-index: -1;
+  height: 60vh;
+  top: 40vh;
+  display: none;
+}
+
+.skills-front {
+  width: calc((100vw - 85vh)/2);
+  left: 0;
+  -webkit-transform: translate(110%, 0);
+          transform: translate(110%, 0);
+}
+
+.skills-front.visible-slide {
+  -webkit-transform: translate(15px, 0);
+          transform: translate(15px, 0);
+}
+
+.skills-front h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  color: #cbdad9;
+  margin: 0;
+}
+
+.skills-front .front-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(5x);
+          backdrop-filter: blur(5x);
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid whitesmoke;
+}
+
+.skills-front .front-container img {
+  width: 5vw;
+  margin: 15px;
+}
+
+.skills-back-tools {
+  width: calc((100vw - 85vh)/2);
+  right: 0;
+  -webkit-transform: translate(-110%, 0);
+          transform: translate(-110%, 0);
+}
+
+.skills-back-tools.visible-slide {
+  -webkit-transform: translate(-10px, 0);
+          transform: translate(-10px, 0);
+}
+
+.skills-back-tools h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  color: #cbdad9;
+  margin: 0;
+}
+
+.skills-back-tools .back-container, .skills-back-tools .tools-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(147, 130, 127, 0.75);
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid whitesmoke;
+  -webkit-backdrop-filter: blur(5x);
+          backdrop-filter: blur(5x);
+}
+
+.skills-back-tools img {
+  width: 5vw;
+  margin: 15px;
+}
+
+/****************** Grid css **********************************************************/
+.grid-container {
+  width: 80vh;
+  height: 100vh;
+  position: relative;
+  margin: -20vh auto 0;
+  overflow: hidden;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.grid-container.flipped {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.grid-container .grid-square {
+  background-image: url("./images//portraitnblight.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vh 100vh;
+  border: 10px solid #3D2648;
+  position: absolute;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  pointer-events: none;
+}
+
+.grid-container .grid-square .folder {
+  position: absolute;
+  border: 10px solid #3D2648;
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+}
+
+.grid-container .grid-square .menu-link {
+  font-family: "Oswald", sans-serif;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: blanchedalmond;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  display: none;
+  -webkit-transition: display 0.5s ease-out;
+  transition: display 0.5s ease-out;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-container .grid-square .menu-item {
+  font-family: "Oswald", sans-serif;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: blanchedalmond;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  display: none;
+  -webkit-transition: display 0.5s ease-out;
+  transition: display 0.5s ease-out;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-container .grid-square .menu-item:hover {
+  background-color: gray;
+  opacity: 0.75;
+  z-index: 3;
+  -webkit-transition: color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  transition: color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out;
+  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  top: 0;
+  left: 0;
+}
+
+.grid-container .grid-square .menu-item:hover div {
+  position: absolute;
+  -webkit-transition: color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  transition: color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out;
+  transition: transform 0.25s ease-out, color 0.25s ease-out, font-size 0.25s ease-out , background-color 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  color: white;
+  font-size: 2rem;
+  -webkit-filter: brightness(175%);
+          filter: brightness(175%);
+  text-shadow: 3px 2.5px 5px black;
+  z-index: 5;
+  opacity: 1;
+  width: 95%;
+  height: 90%;
+  padding-left: 10px;
+}
+
+.grid-container .two {
+  position: absolute;
+  width: 80vh;
+  height: 20vh;
+  background-color: transparent;
+  background-image: none;
+  top: 20vh;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: calc(2.5rem + 0.5vw);
+  font-family: "Open Sans Condensed", sans-serif;
+  color: blanchedalmond;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  border: none;
+}
+
+.grid-container .two h2 {
+  font-variant: small-caps;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.grid-container .three.active-menu {
+  width: 100vh;
+  height: 100vh;
+  background-position: 20vh 0vh;
+  top: 40vh;
+  left: 0;
+}
+
+.grid-container .three {
+  width: 20vh;
+  height: 20vh;
+  top: 40vh;
+  left: 0px;
+  background-position: 0px 0vh;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+.grid-container .three .folder {
+  width: 20vh;
+  height: 20vh;
+  margin-left: -10px;
+  margin-top: -10px;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.grid-container .three .folder.active-menu {
+  width: 100vh;
+  height: 100vh;
+  border: none;
+  margin: 0;
+  top: 0vh;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.grid-container .three .menu-item.full-title:hover {
+  background-color: transparent;
+}
+
+.grid-container .three .menu-item {
+  width: calc(20vh-10px);
+  height: 18vh;
+  top: 0px;
+  left: 0px;
+}
+
+.grid-container .three .menu-item .title-menu {
+  top: 100%;
+  left: 5%;
+}
+
+.grid-container .three .menu-item div {
+  margin: 10px;
+}
+
+.grid-container .four {
+  width: 60vh;
+  height: 40vh;
+  top: 40vh;
+  left: 20vh;
+  background-position: -20vh 0vh;
+  opacity: 0;
+  border-right: none;
+}
+
+.grid-container .four .menu-item div {
+  margin: 10px;
+}
+
+.grid-container .four .folder {
+  width: 80vh;
+  height: 40vh;
+  margin-left: -10px;
+  margin-top: -10px;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.grid-container .five.active-menu {
+  width: 100vh;
+  height: 100vh;
+  background-position: 0vh 0vh;
+  top: 40vh;
+  left: 0;
+}
+
+.grid-container .five {
+  background-position: 0px -20vh;
+  width: 20vh;
+  height: 40vh;
+  top: 60vh;
+  left: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.grid-container .five .menu-item.full-title:hover {
+  background-color: transparent;
+  top: 10px;
+  left: 10px;
+}
+
+.grid-container .five .menu-item .title-menu {
+  top: 10%;
+  left: 0%;
+  width: 100%;
+}
+
+.grid-container .five .menu-item:hover div {
+  top: 10%;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-container .five .folder {
+  width: 20vh;
+  height: 40vh;
+  margin-left: -10px;
+  margin-top: -10px;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.grid-container .five .folder.active-menu {
+  width: 100vh;
+  height: 100vh;
+  border: none;
+  margin: 0;
+  top: 0vh;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.grid-container .seven.active-menu {
+  width: 100vh;
+  height: 100vh;
+  background-position: 20vh 0vh;
+  top: 40vh;
+  left: 0;
+}
+
+.grid-container .seven {
+  background-position: -20vh -40vh;
+  width: 60vh;
+  height: 20vh;
+  top: 80vh;
+  left: 20vh;
+  -webkit-transform: translateX(-100vh);
+          transform: translateX(-100vh);
+  border-right: none;
+}
+
+.grid-container .seven .folder.active-menu {
+  width: 100vh;
+  height: 100vh;
+  border: none;
+  margin: 0;
+  top: 0vh;
+}
+
+.grid-container .seven .folder {
+  border-right: none;
+  width: 60vh;
+  height: 20vh;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+.grid-container .seven .menu-item.full-title:hover {
+  background-color: transparent;
+}
+
+.grid-container .seven .menu-item {
+  width: 60vh;
+  height: 18vh;
+  top: 0px;
+  left: 0px;
+}
+
+.grid-container .seven .menu-item div {
+  margin: 10px;
+}
+
+.grid-container .seven .menu-item .title-menu {
+  top: 50%;
+  left: 10px;
+  width: 125%;
+}
+
+.title-menu {
+  position: absolute;
+  margin: 0;
+  font-size: 4.5rem;
+  display: none;
+}
+
+/************************** Jeu du taquin***************************/
+/***********************Media queries********************************/
+@media screen and (max-width: 1440px) {
+  .top {
+    width: 1024px;
+  }
+  .top h1 {
+    left: -18px;
+    font-size: 5.5rem;
+  }
+  h2 {
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .top {
+    width: 768px;
+    height: 150px;
+  }
+  .top h1 {
+    left: -18px;
+    font-size: 5.5rem;
+  }
+  .grid-container {
+    width: 80vw;
+    height: 100vw;
+    margin: -20vw auto 0;
+  }
+  .grid-container .grid-square {
+    background-size: 100vw 100vw;
+  }
+  .grid-container .two {
+    width: 80vw;
+    height: 20vw;
+    top: 20vw;
+    font-size: calc(2.5rem + 0.5vw);
+    font-family: "Open Sans Condensed", sans-serif;
+  }
+  .grid-container .two h2 {
+    font-variant: small-caps;
+    font-family: "Open Sans Condensed", sans-serif;
+  }
+  .grid-container .three {
+    width: 20vw;
+    height: 20vw;
+    top: 40vw;
+  }
+  .grid-container .three .folder {
+    width: 20vw;
+    height: 20vw;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+  .grid-container .four {
+    width: 80vw;
+    height: 40vw;
+    top: 40vw;
+    left: 20vw;
+    background-position: -20vw 0vw;
+    opacity: 0;
+  }
+  .grid-container .four .folder {
+    width: 80vw;
+    height: 40vw;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+  .grid-container .five {
+    background-position: 0px -20vw;
+    width: 20vw;
+    height: 40vw;
+    top: 60vw;
+    left: 0;
+  }
+  .grid-container .five .folder {
+    width: 20vw;
+    height: 40vw;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+  .grid-container .five .folder .menu-item {
+    width: 100%;
+  }
+  .grid-container .seven.active-menu {
+    width: 100vw;
+    height: 100vw;
+    background-position: 20vw 40vw;
+    top: 40vw;
+  }
+  .grid-container .seven {
+    background-position: -20vw -40vw;
+    width: 80vw;
+    height: 20vw;
+    top: 80vw;
+    left: 20vw;
+    -webkit-transform: translateX(-125%);
+            transform: translateX(-125%);
+  }
+  .grid-container .seven .folder.active-menu {
+    width: 100vw;
+    height: 100vw;
+    border: none;
+    top: 0vw;
+  }
+  .grid-container .seven .folder {
+    width: 80vw;
+    height: 20vw;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid-square:hover .menu-item {
+    background-color: transparent !important;
+  }
+  .top {
+    width: 360px;
+  }
+  .two h2 {
+    font-size: 1.75rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
