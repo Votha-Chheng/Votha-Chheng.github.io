@@ -496,19 +496,16 @@ aside #id-container .id-soft-skills .hobbies {
   padding-bottom: 7.5px;
 }
 
-@media screen and (max-width: 820px) {
+@media (max-width: 1024px) {
   #frame-a4 {
     width: 360px;
     height: auto;
-    overflow: hidden;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
     padding: 0;
     background-color: #32213A;
-    -webkit-transform: translateY(20vh);
-            transform: translateY(20vh);
   }
   #frame-a4 main {
     padding: 10px 7.5px;

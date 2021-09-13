@@ -36,22 +36,7 @@ main .card {
   height: auto;
   border-radius: 15px;
   margin: 20px;
-}
-
-main .card.bauxt {
-  background-color: #798a94;
-}
-
-main .card.betry {
-  background-color: #a18496;
-}
-
-main .card.audrey {
-  background-color: #dddbdb;
-}
-
-main .card.cavallo {
-  background-color: #b49365;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 main .card .description, main .card p {
@@ -82,12 +67,14 @@ main .card li {
 main #bauxt {
   font-family: "Parisienne", script;
   font-size: 1.75rem;
+  color: #37393a;
 }
 
 main #betry {
   font-family: "Marck Script", script;
   font-size: 1.75rem;
   font-weight: unset;
+  color: #37393a;
 }
 
 main #audrey {

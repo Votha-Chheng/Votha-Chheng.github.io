@@ -17,6 +17,7 @@ const skillsBackTools = document.querySelector(".skills-back-tools")
 const taquin = document.querySelector(".casse-tete")
 
 const CV = document.querySelector("#frame-a4")
+const body = document.querySelector("body")
 
 const tabletSize = window.matchMedia("(max-width:1024px)")
 const phoneSize = window.matchMedia("(max-width:500px)")
@@ -78,27 +79,32 @@ squareSeven.addEventListener('click', ()=>{
 
   if(menuSeven){
 
-    skillsFront.style.display = "block"
-    skillsBackTools.style.display = "block"
     menuItems[3].classList.add("full-title")
     h2SevenTitleMenu.style.display="block"
-    menuItemsTitleSeven.style.display = "none"
+    menuItemsTitleSeven.style.display = "none"    
     squareSeven.classList.add("active-menu")
     folderSeven.classList.add("active-menu")
 
-
     setTimeout(()=>{
+      skillsFront.style.display = "block"
+      skillsBackTools.style.display = "block"
+    }, 350)
+
+    setTimeout(()=>{   
       skillsFront.classList.add("visible-slide")
       skillsBackTools.classList.add("visible-slide")
     }, 400)
 
     if(tabletSize.matches){
       gsap.to(squareSeven, {backgroundPosition:"0vh -40vw"}, '-=2')
+      gridContainer.classList.add("visible-slide")
     } else {
       gsap.to(squareSeven, {backgroundPosition:"0vh -40vh"}, '-=2')
+
     }
     
   } else {
+
     skillsFront.classList.remove("visible-slide")
     skillsBackTools.classList.remove("visible-slide")
     h2SevenTitleMenu.style.display="none"
@@ -112,10 +118,12 @@ squareSeven.addEventListener('click', ()=>{
     setTimeout(()=>{
       skillsFront.style.display = "none"
       skillsBackTools.style.display = "none"
-    },1000)
+    },500)
 
     if(tabletSize.matches){
       gsap.to(squareSeven, {backgroundPosition:"-20vw -80vw"}, '-=3')
+      gridContainer.classList.remove("visible-slide")
+
     } else {
       gsap.to(squareSeven, {backgroundPosition:"-20vh -80vh"}, '-=3')
     }   
@@ -132,16 +140,12 @@ squareThree.addEventListener('click', ()=>{
     h2ThreeTitleMenu.style.display="block"
     menuItemsTitleThree.style.display = "none"
     squareThree.classList.add("active-menu")
-    folderThree.classList.add("active-menu")
+    folderThree.classList.add("active-menu")   
 
     setTimeout(()=>{
       gridContainer.style.transform = "scale(0.25)"
       gridContainer.style.transform = " translate(0, -20vh) scale(0.25)"
     }, 500)
-     
-    setTimeout(()=>{
-      gridContainer.style.transform = " translate(-40vw, -20vh) scale(0.25)"
-    }, 1500) 
 
     setTimeout(()=>{
       CV.style.display = "flex"
@@ -149,40 +153,90 @@ squareThree.addEventListener('click', ()=>{
 
     setTimeout(()=>{ 
       CV.style.opacity = 1
-      CV.style.height = "29.7cm";
-    }, 2500)    
+    }, 2500) 
+
+    if(tabletSize.matches){
+
+      CV.style.top = "200px";
+
+    } else {
+
+      setTimeout(()=>{ 
+        CV.style.height = "29.7cm";
+      }, 2500) 
+
+      setTimeout(()=>{
+        gridContainer.style.transform = " translate(-40vw, -20vh) scale(0.25)"
+      }, 1500) 
+
+    }
 
   } else { 
-    CV.style.height = "0";
-    CV.style.zIndex =""
-    
-    setTimeout(()=>{
-      CV.style.display = "none"
-      gridContainer.style.transform = "translate(0,-20vh) scale(0.25)"
-    }, 750)
 
-    setTimeout(()=>{
-      gridContainer.style.transform = "translate(0, 0vh) scale(0.25)"
+    if(tabletSize.matches){
+      CV.style.opacity = 0
+
+      setTimeout(()=>{
+        CV.style.display = "none"
+        gridContainer.style.transform = "translate(0, 0vh) scale(0.25)"
+      }, 250)
+
+      setTimeout(()=>{ 
+        gridContainer.style.transform = "translate(0, 0vh) scale(1)"
+      }, 600)
+
+      setTimeout(()=>{
+        squareThree.classList.remove("active-menu")
+        folderThree.classList.remove("active-menu")
+        h2ThreeTitleMenu.style.display="none"
+        menuItemsTitleThree.style.display = "block"
+      }, 900)
+
+      setTimeout(()=>{
+        h2ThreeTitleMenu.style.display="none"
+        squareThree.style.zIndex = ""
+      }, 1500) 
+
+      setTimeout(()=>{
+        menuItems[0].classList.remove("full-title")
+        gridContainer.style.transform = "translate(0, 0vh) scale(1)"
+      }, 1700)
+
+      setTimeout(()=>{
+        gridContainer.style.transform = ""
+      }, 1700)
       
-    }, 1550)
+    } else {
 
-    setTimeout(()=>{
-      menuItems[0].classList.remove("full-title")
-      gridContainer.style.transform = "translate(0, 0vh) scale(1)"
-      
-    }, 2500)
+      setTimeout(()=>{
+        CV.style.display = "none"
+        gridContainer.style.transform = "translate(0,-20vh) scale(0.25)"
+      }, 750)
 
-    setTimeout(()=>{
-      squareThree.classList.remove("active-menu")
-      folderThree.classList.remove("active-menu")
-      h2ThreeTitleMenu.style.display="none"
-      menuItemsTitleThree.style.display = "block"
-    }, 3000)
+      setTimeout(()=>{
+        gridContainer.style.transform = "translate(0, 0vh) scale(0.25)"
+        
+      }, 1550)
 
-    setTimeout(()=>{
-      h2ThreeTitleMenu.style.display="none"
-      squareThree.style.zIndex = ""
-    }, 4000) 
+      setTimeout(()=>{
+        menuItems[0].classList.remove("full-title")
+        gridContainer.style.transform = "translate(0, 0vh) scale(1)"
+      }, 2500)
+
+      setTimeout(()=>{
+        squareThree.classList.remove("active-menu")
+        folderThree.classList.remove("active-menu")
+        h2ThreeTitleMenu.style.display="none"
+        menuItemsTitleThree.style.display = "block"
+        gridContainer.style.transform = ""
+      }, 3000)
+
+      setTimeout(()=>{
+        h2ThreeTitleMenu.style.display="none"
+        squareThree.style.zIndex = ""
+      }, 4000) 
+
+    }   
   } 
 })
 
@@ -193,7 +247,6 @@ const message = document.querySelector("#message")
 
 squareFive.addEventListener('click', ()=>{
   squareFive.style.zIndex = "50"
-  squareFive.style.backgroundPosition = "0 -40vh"
   menuItems[2].classList.add("full-title")
   h2FiveTitleMenu.style.display="block"
   menuItemsTitleFive.style.display = "none"
@@ -208,6 +261,12 @@ squareFive.addEventListener('click', ()=>{
     backButton.style.opacity = 1
     message.style.display = "block"
   }, 1000)
+
+  if(tabletSize.matches){
+    squareFive.style.backgroundPosition = "0 -20vh"
+  } else {
+    squareFive.style.backgroundPosition = "0 -40vh"
+  }
 
 })
 
