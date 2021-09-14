@@ -149,7 +149,7 @@ squareThree.addEventListener('click', ()=>{
 
     setTimeout(()=>{
       CV.style.display = "flex"
-    },2400)
+    },2300)
 
     setTimeout(()=>{ 
       CV.style.opacity = 1
@@ -207,7 +207,8 @@ squareThree.addEventListener('click', ()=>{
       }, 1700)
       
     } else {
-
+      CV.style.height = "0";
+      
       setTimeout(()=>{
         CV.style.display = "none"
         gridContainer.style.transform = "translate(0,-20vh) scale(0.25)"

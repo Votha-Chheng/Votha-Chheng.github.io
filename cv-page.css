@@ -6,39 +6,22 @@
           box-sizing: border-box;
 }
 
-.retour-accueil {
-  position: absolute;
-  left: 20px;
-  width: 160px;
-  height: 120px;
-  background-image: url(./images/portraitnb.jpg);
-  background-size: 200px 200px;
-  background-position: 0px -80px;
-}
-
-#frame-a4.page-cv {
-  opacity: 1;
+body {
+  margin: 0;
+  background-color: #32213a;
 }
 
 #frame-a4 {
   width: 21cm;
-  height: 0;
   margin: 0px auto;
   background-color: white;
-  padding: 0.1cm 0.1cm 0.2cm 0.35cm;
+  padding: 0.2cm 0.35cm;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   -webkit-transition: all 0.8s ease-out;
   transition: all 0.8s ease-out;
-  display: none;
-  position: absolute;
-  top: 22vh;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  opacity: 0;
 }
 
 a {
@@ -235,7 +218,7 @@ main ul.conteneur-diplome li.flex-diplome .box-texte .date-diplome {
 }
 
 aside {
-  padding: 0px 0px 10px;
+  padding: 0px 0px 0px;
   background-color: #382541;
   width: 170px;
 }
@@ -496,7 +479,7 @@ aside #id-container .id-soft-skills .hobbies {
   padding-bottom: 7.5px;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   #frame-a4 {
     width: 360px;
     height: auto;
@@ -664,4 +647,4 @@ aside #id-container .id-soft-skills .hobbies {
     font-size: 1rem;
   }
 }
-/*# sourceMappingURL=cv.css.map */
+/*# sourceMappingURL=cv-page.css.map */

@@ -3,38 +3,24 @@ $font-title : "Crimson Text", serif;
 $font-id : "Oswald", serif;
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.retour-accueil{
-    position: absolute;
-    left: 20px;
-    width: 160px;
-    height: 120px;
-    background-image: url(./images/portraitnb.jpg);
-    background-size: 200px 200px;
-    background-position: 0px -80px ;
+body{
+  margin: 0;
+  background-color: #32213a;
 }
-#frame-a4.page-cv{
-    opacity: 1;
-}
+
 #frame-a4{
-    width: 21cm;
-    height: 0;
-    margin: 0px auto;
-    background-color: white;
-    padding : 0.1cm 0.1cm 0.2cm 0.35cm;
-    display: flex ;
-    overflow: hidden;
-    transition: all 0.8s ease-out;
-    display: none;
-    position: absolute;
-    top: 22vh;
-    left: 50%;
-    transform: translate(-50%, 0);
-    opacity: 0;
+  width: 21cm;
+  margin: 0px auto;
+  background-color: white;
+  padding : 0.2cm 0.35cm;
+  display: flex ;
+  overflow: hidden;
+  transition: all 0.8s ease-out;
 }
 a{
     color: inherit;
@@ -200,7 +186,7 @@ main{
 }
 
 aside{
-    padding: 0px 0px 10px;
+    padding: 0px 0px 0px;
     background-color: #382541;
     width: 170px;
 
@@ -427,7 +413,7 @@ aside{
 
 //*************** Responsive ************************************************************
 
-@media (max-width:1024px){
+@media screen and (max-width:1024px){
     #frame-a4{
         width: 360px;
         height: auto;
