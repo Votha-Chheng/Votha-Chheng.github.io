@@ -73,14 +73,19 @@ main .card {
   padding: 5px;
   width: 360px;
   height: auto;
-  border-radius: 15px;
   margin: 20px;
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+main .card a img {
+  margin: 0 5.5px;
+}
+
 main .card .description, main .card p {
   font-family: "Oswald", sans-serif;
-  padding: 0 5px;
+  padding: 0 10px;
+  font-size: 1.2rem;
+  margin-top: 15px;
 }
 
 main .card .link {
@@ -101,6 +106,7 @@ main .card h3 {
 
 main .card li {
   margin: 7.5px 0;
+  list-style-type: circle;
 }
 
 main #bauxt {

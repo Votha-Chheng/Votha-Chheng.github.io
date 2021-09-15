@@ -78,7 +78,6 @@ squareSeven.addEventListener('click', ()=>{
   menuSeven = !menuSeven
 
   if(menuSeven){
-
     menuItems[3].classList.add("full-title")
     h2SevenTitleMenu.style.display="block"
     menuItemsTitleSeven.style.display = "none"    
