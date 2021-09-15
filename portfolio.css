@@ -73,8 +73,12 @@ main .card {
   padding: 5px;
   width: 360px;
   height: auto;
-  margin: 20px;
+  border: 2.5px solid #9b9a9a;
+  -webkit-box-shadow: 5px 3px 15px solid white;
+          box-shadow: 5px 3px 15px solid white;
+  margin: 20px 30px;
   background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 7.5px;
 }
 
 main .card a img {
