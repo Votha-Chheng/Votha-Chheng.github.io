@@ -70,6 +70,8 @@ main{
     margin: 20px 30px;
     background-color: rgba(255,255,255, 0.95);
     border-radius: 7.5px;
+    transform: rotateY(45deg);
+    transform-style: preserve-3d;
 
     a img{
       margin: 0 5.5px;
