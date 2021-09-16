@@ -9,7 +9,7 @@ body{
   padding: 0;
   margin: 0;
   position: relative;
-  background-color: #32213A;
+  background-color: #432A4E;
   
 }
 .blur-bg{
@@ -141,7 +141,7 @@ body{
   position: relative;
   margin: -20vh auto 0;
   overflow: hidden;
-  transition: all 1s ease-out;
+  transition: all 0.75s ease-out;
   backface-visibility: hidden;
 
   &.flipped{
@@ -462,12 +462,12 @@ body{
 
   .skills-back-tools.visible-slide{
     top:160px;
-    transform: translate(-50%, 255px);
+    transform: translate(-50%, 300px);
     transition: all 0.8s ease-out;
   }
 
   .grid-container.visible-slide{
-    transform: translate(0, 600px);
+    transform: translate(0, 520px);
 
     .two{
       opacity: 0;
@@ -603,7 +603,10 @@ body{
   }
 }
 
-@media (max-width : 800px){
+@media (max-width : 830px){
+  .grid-container.visible-slide{
+    transform: translate(0, 600px);
+  }
   .top{
     width: 540px;
 
@@ -616,17 +619,19 @@ body{
 
 
 @media (max-width : 500px){
+  .grid-container.visible-slide{
+    transform: translate(0, 640px);
+  }
   #back-jeu{
     transform: translate(0, -20px);
   }
+  h2.title-menu{
+    top: 0vw !important;
+    left: 0;
+  }
   .grid-square:hover{
     .menu-item{
-      background-color: transparent !important;
-
-      h2.title-menu{
-        top: 0;
-        left: 0;
-      }
+      background-color: transparent;
     }
   }
   .top{
