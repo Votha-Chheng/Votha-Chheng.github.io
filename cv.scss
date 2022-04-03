@@ -76,18 +76,18 @@ main{
     p{
         text-align: justify;
         text-indent: 0.25cm;
-        line-height: 1.1rem;
+        line-height: 1rem;
         margin : 0;
         font-family: $font-p;
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
     ul.conteneur-experiences{
         margin: 0 auto;
         padding: 0;
         width: 100%;
         font-family: $font-p;
-        font-size: 1rem;
-        line-height: 1.25rem;
+        font-size: 0.85rem;
+        line-height: 1rem;
         
         
         li{
@@ -135,10 +135,10 @@ main{
                     margin-bottom: 5px;
                     position: relative;
                     padding-left: 7.5px;
-                    font-size: 0.85rem;
+                    font-size: 0.8rem;
                     letter-spacing: 0.25px;
                     width: 590px;
-                    line-height: 1.1rem;
+                    line-height: 1rem;
                     width: 100%;
 
                     &:before{
@@ -184,10 +184,11 @@ main{
                 display: flex;
                 justify-content: space-between;
                 font-family: $font-p;
-                font-size: 0.95rem;
+                font-size: 0.75rem;
 
                 .nom-diplome{
                     font-weight: bold;
+                    font-size: 0.85rem;
                 }
 
                 .date-diplome{

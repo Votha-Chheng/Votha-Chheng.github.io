@@ -66,7 +66,7 @@ let shuffledPieceImageArray = shuffleArray(pieceArray)
 for(let i=0; i<pieceImageArray.length; i++){
     casseTete.appendChild(pieceImageArray[i])
     let imagePuzzle = document.createElement("img")
-    imagePuzzle.src = "/images/portraitnb.jpg"
+    imagePuzzle.src = "./images/portraitnb.jpg"
     
     if(i===3){
         imagePuzzle.src = ""
@@ -138,7 +138,6 @@ casseTete.addEventListener("click", (event)=>{
         
         
     }) 
-    console.log(solutionArray)
     if(solutionArray.includes(false)){
         document.querySelector("#message").innerHTML = "C'est pas gagné !"
     } else {
@@ -147,8 +146,6 @@ casseTete.addEventListener("click", (event)=>{
         casseTete.style.filter = "invert(100%)"
     }     
 })    
-
-console.log(document.querySelector("#message"))
 
     
     
